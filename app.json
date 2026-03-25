@@ -1,31 +1,33 @@
 {
-  "name": "ISHAN SPARK-X",
-  "description": "ISHAN SPARK-X 🚀 — A powerful, fast & stable WhatsApp automation bot | ©𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚋𝚢 𝙸𝚂𝙷𝙰𝙽-𝕏",
-  "logo": "https://files.catbox.moe/h1xuqv.jpg",
-  "keywords": ["ISHAN SPARK-X"],
-  "success_url": "/",
-
+  "name": "ISHAN-X-MD-PAIR-WEB",
+  "description": "WhatsApp Pair Code / QR Code Generator Web App",
+  "repository": "https://github.com/ishanxmd/ISHAN-X-MD-BETA-PAIR-WEB",
+  "logo": "",
+  "keywords": ["whatsapp", "pair", "qr", "baileys"],
   "env": {
-    "SESSION_ID": {
-      "description": "Put the session-id here.",
-      "required": true
-    },  
-
-    "ALIVE_IMG": {
-      "description": "Put your alive img here.",
-      "required": true
-    },
-    
-    "ALIVE_MSG": {
-      "description": "Put your alive msg here.",
-      "required": true
-    }   
-},
-
-     "buildpacks": [
-        {
-            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-        }
-     ],
-  "stack": "heroku-24"
+    "PORT": {
+      "description": "Port the Express server listens on (Heroku sets this automatically)",
+      "value": "8000",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-24",
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "echo 'No test specified'"
+      }
+    }
+  }
 }
